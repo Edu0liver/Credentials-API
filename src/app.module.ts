@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
         HealthModule,
         SharedModule,
         UsersModule,
+        AuthModule,
     ],
     controllers: [],
     providers: [],
