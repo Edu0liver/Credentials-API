@@ -43,6 +43,10 @@ export class UserService {
         return user;
     }
 
+    async findByResetToken(token: string) {
+        return await this.repository.findByResetToken(token);
+    }
+
     async update(id: number, dto: UpdateUserDto) {
         const user = await this.findOne(id);
 

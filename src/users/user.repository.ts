@@ -22,6 +22,17 @@ export class UserRepository {
         return this.prisma.user.findUnique({ where: { email } });
     }
 
+    async findByResetToken(token: string) {
+        return await this.prisma.user.findFirst({
+            where: {
+                reset_token: token,
+                reset_token_expires: {
+                    gt: new Date(),
+                },
+            },
+        });
+    }
+
     async update(id: number, data: Prisma.UserUpdateInput) {
         return this.prisma.user.update({
             where: { id },

@@ -9,11 +9,13 @@ import { AuthController } from './auth.controller';
 import { jwtConstants } from './constants';
 import { UsersModule } from 'src/users/users.module';
 import { DatabaseModule } from 'src/shared/database/database.module';
+import { MailerModule } from 'src/mailer/mailer.module';
 
 @Module({
     imports: [
         DatabaseModule,
         PassportModule,
+        MailerModule,
         JwtModule.register({
             secret: jwtConstants.secret,
             signOptions: { expiresIn: '60s' },

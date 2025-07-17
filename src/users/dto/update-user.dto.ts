@@ -16,4 +16,11 @@ export class UpdateUserDto {
     @IsOptional()
     @IsString()
     password?: string;
+
+    @IsOptional()
+    @IsString()
+    reset_token?: string;
+
+    @IsOptional()
+    reset_token_expires?: Date;
 }

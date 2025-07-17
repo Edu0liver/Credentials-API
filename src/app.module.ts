@@ -5,6 +5,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { MailerModule } from './mailer/mailer.module';
 
 @Module({
     imports: [
@@ -14,6 +15,7 @@ import { AuthModule } from './auth/auth.module';
         SharedModule,
         UsersModule,
         AuthModule,
+        MailerModule,
     ],
     controllers: [],
     providers: [],
